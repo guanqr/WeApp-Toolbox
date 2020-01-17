@@ -7,13 +7,13 @@ var json = [
   },
   {
     "id": 2,
-    "name": "家庭记账本",
-    "logo": "/images/relationship.png",
-    "url": "/pages/relationship-calculator/relationship-calculator"
+    "name": "BMI 计算器",
+    "logo": "/images/weight.png",
+    "url": "/pages/bmi-calculator/bmi-calculator"
   },
   {
     "id": 3,
-    "name": "BMI 计算器",
+    "name": "家庭记账本",
     "logo": "/images/relationship.png",
     "url": "/pages/relationship-calculator/relationship-calculator"
   }

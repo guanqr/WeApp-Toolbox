@@ -3,20 +3,19 @@ page{
     height: 100%;
     background: #f7f7f7;
 }
-.wx-switch-input{
+.head-view .wx-switch-input{
   background: #7DB9DE !important;
   border: #7DB9DE !important;
   height: 40rpx !important;
 }
 /*白色样式（false的样式）*/
-.wx-switch-input::before{
+.head-view .wx-switch-input::before{
   height: 36rpx !important;
 }
 /*绿色样式（true的样式）*/
-.wx-switch-input::after{
+.head-view .wx-switch-input::after{
   height: 36rpx !important;
 }
-
 .keyboard {
   background: #e5e5e5;
   color: #FFFFFF;

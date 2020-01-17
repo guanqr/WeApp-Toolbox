@@ -21,7 +21,6 @@
   height: 84rpx;
 }
 .tool-name {
-  color: #7DB9DE;
   font-size: 36rpx;
   margin-left: 280rpx;
 }

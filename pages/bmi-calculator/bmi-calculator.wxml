@@ -1,0 +1,42 @@
+<!--pages/bmi-calculator/bmi-calculator.wxml-->
+<view class="head">
+  <view class="bmi">
+    <view class="bmi-head">你的 BMI 值</view>
+    <view class="bmi-index">{{score}}</view>
+  </view>
+  <view class="bmi-description">BMI，即身体质量指数，是国际上常用的衡量人体肥胖程度和健康程度的重要标准。BMI=体重/身高平方 (kg/㎡)</view>
+  <view class="result">
+    <view class="overview">身体状况：{{physicalCondition}}</view>
+    <view class="overview">标准体重：{{weightStandard}}kg</view>
+  </view>
+</view>
+
+<view class="height">
+  <view class="slider-description">
+    <view class="icon">
+      <image class="slider-icon" src="/images/height.png"></image>
+    </view>
+    <view class="data">
+      <view class="slider-head">身高</view>
+      <view class="slider-index">{{bmi.height}}cm</view>
+    </view>
+  </view>
+  <view class="body-view">
+    <slider max="220" min="80" step="1" value="{{bmi.height}}" bindchanging="changeHeight" block-color="#7DB9DE" block-size="16" activeColor="#7DB9DE"/>
+  </view>
+</view>
+<view class="weight">
+  <view class="slider-description">
+    <view class="icon">
+      <image class="slider-icon" src="/images/weight.png"></image>
+    </view>
+    <view class="data">
+      <view class="slider-head">体重</view>
+      <view class="slider-index">{{bmi.weight}}kg</view>
+    </view>
+  </view>
+  <view class="body-view">
+    <slider max="100" min="10" step="1" value="{{bmi.weight}}" bindchanging="changeWeight" block-color="#7DB9DE" block-size="16" activeColor="#7DB9DE"/>
+  </view>
+</view>
+<button hover-class="btn-hover" bindtap="calculateBtn">计算</button>
