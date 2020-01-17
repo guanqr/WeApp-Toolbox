@@ -1,0 +1,12 @@
+<!--components/toolCard/toolCard.wxml-->
+<navigator class="tool" url="{{item.url}}" open-type="navigate">
+  <view class="tool-icon">
+    <image src="{{item.logo}}"></image>
+  </view>
+  <view class="tool-name">
+   {{item.name}}
+  </view>
+  <view class="arrow">
+    <image src="/images/arrow.png"></image>
+  </view>
+</navigator>

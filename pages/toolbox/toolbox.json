@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "toolCard": "../../components/toolCard/toolCard"
+  },
+  "navigationBarTitleText": "生活工具箱"
+}

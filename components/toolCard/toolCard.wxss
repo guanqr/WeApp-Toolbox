@@ -1,0 +1,36 @@
+/* components/toolCard/toolCard.wxss */
+.tool {
+  display: flex;
+  background-color: #eff2f5;
+  height: 160rpx;
+  width: 90%;
+  margin-left: 37.5rpx;
+  margin-top: 42rpx;
+  border-radius: 25rpx;
+  align-items: center;
+  box-shadow: 0rpx 0rpx 16rpx 1rpx #7da0c0;
+  /*justify-content: center;*/
+}
+.tool-icon {
+  position: absolute;
+  margin-top: 4rpx;
+  left: 96rpx;
+}
+.tool-icon image {
+  width: 84rpx;
+  height: 84rpx;
+}
+.tool-name {
+  color: #7DB9DE;
+  font-size: 36rpx;
+  margin-left: 280rpx;
+}
+.arrow {
+  position: absolute;
+  margin-top: 4rpx;
+  right: 64rpx;
+}
+.arrow image {
+  width: 48rpx;
+  height: 48rpx;
+}

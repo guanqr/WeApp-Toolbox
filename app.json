@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/toolbox/toolbox",
+    "pages/home/home",
+    
+    "pages/calculator/calculator",
+    "pages/relationship-calculator/relationship-calculator",
+    "pages/setting/setting",
+    "pages/logs/logs",
+    "pages/calculator-history/calculator-history",
+    "pages/calculator-help/calculator-help"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#7DB9DE",
+    "navigationBarTitleText": "独彷徨",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "color": "#515151",
+    "selectedColor": "#7DB9DE",
+    "list": [
+      {
+        "pagePath": "pages/toolbox/toolbox",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-selected.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "计算",
+        "iconPath": "images/calculator.png",
+        "selectedIconPath": "images/calculator-selected.png"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "text": "设置",
+        "iconPath": "images/setting.png",
+        "selectedIconPath": "images/setting-selected.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

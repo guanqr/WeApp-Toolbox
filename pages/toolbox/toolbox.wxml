@@ -1,0 +1,4 @@
+<!--pages/toolbox/toolbox.wxml-->
+<view wx:for="{{tools}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+    <toolCard item="{{item}}"/>
+</view>

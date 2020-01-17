@@ -1,0 +1,4 @@
+/* pages/toolbox/toolbox.wxss */
+page {
+  background: -webkit-linear-gradient(bottom,white,#cef3ff,#7DB9DE);
+}
