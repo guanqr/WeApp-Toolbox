@@ -1,0 +1,17 @@
+<!--pages/cashbook/cashbook.wxml-->
+<view class="body">
+  <view class="cashbook {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{cashbook}}" wx:key= "index">
+    <view class="content">
+      <view class="title">{{item.title}}</view>
+      <view class="details">
+        <view class="money" style="color:{{item.fontColor}};">{{item.mark}}{{item.money}} 元</view>
+        <view class="date">{{item.date}}</view>
+      </view>
+    </view>
+    <view class="del" catchtap="del" data-index="{{index}}">删除</view>
+  </view>
+</view>
+
+<view class="add">
+  <image class="add-icon" bindtap="addNewCash" src="/images/add.png"></image>
+</view>

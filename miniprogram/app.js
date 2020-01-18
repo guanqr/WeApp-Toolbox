@@ -1,6 +1,15 @@
 //app.js
 App({
   onLaunch: function () {
+    if (!wx.cloud) {
+      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
+    } else {
+      wx.cloud.init ({
+        env: 'guanqirui-01',
+        traceUser: true,
+      })
+    }
+
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -32,8 +41,22 @@ App({
         }
       }
     })
+
+    /*this.getCashList ()*/
+
   },
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+    /*cashList: {}*/
+  },
+
+  /*getCashLost: function (){
+    const db = wx.cloud.database()
+    db.collection('cashbook').field ({
+      title: true,
+      date: true,
+      incomeOrPay: true,
+      money: true,
+    })
+  }*/
 })
