@@ -15,7 +15,7 @@ var json = [
     "id": 3,
     "name": "家庭记账本",
     "logo": "/images/relationship.png",
-    "url": "/pages/relationship-calculator/relationship-calculator"
+    "url": "/pages/cashbook/cashbook"
   }
 ]
 

@@ -1,0 +1,37 @@
+/* pages/add-cash/add-cash.wxss */
+page {
+  background-color: #f7f7f7;
+}
+.title {
+  margin-left: 37.5rpx;
+  padding: 32rpx 0;
+  font-size: 32rpx;
+}
+.title-input {
+  background-color: #ffffff;
+  width: 675rpx;
+  height: 68rpx;
+  margin-left: 37.5rpx;
+  font-size: 32rpx;
+}
+.category {
+  margin-left: 37.5rpx;
+}
+.radio {
+  margin-right: 32rpx;
+}
+.picker {
+  background-color: #ffffff;
+  width: 675rpx;
+  height: 68rpx;
+  margin-left: 37.5rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+}
+wx-button {
+  color: #eff2f5;
+  background-color: #7DB9DE;
+  border-color: #7DB9DE;
+  margin-top: 64rpx;
+}

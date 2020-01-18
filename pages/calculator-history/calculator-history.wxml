@@ -1,6 +1,0 @@
-<!--pages/calculator-history/calculator-history.wxml-->
-<view class="content">
-  <block wx:for="{{logs}}" wx:for-item="log" wx:key="log">
-    <view class="item">{{log}}</view>
-  </block>
-</view>

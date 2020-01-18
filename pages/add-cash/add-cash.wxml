@@ -1,0 +1,20 @@
+<!--pages/add-cash/add-cash.wxml-->
+<view class="title">收支名称</view>
+<input class="title-input" placeholder="" bindinput="titleInput" />
+
+<view class="title">收支类型</view>
+<radio-group class="category" bindchange="radioChange">
+    <label class="radio" wx:for="{{items}}" wx:key="index">
+        <radio value="{{item.name}}" checked="{{item.checked}}" color="#7DB9DE"/>{{item.value}}
+    </label>
+</radio-group>
+
+<view class="title">收支金额</view>
+<input class="title-input" placeholder="" bindinput="moneyInput" />
+
+<view class="title">选择日期</view>
+<picker mode="date" value="{{date}}" start="2019-01-01" end="2030-12-31" bindchange="bindDateChange">
+  <view class="picker">{{date}}</view>
+</picker>
+
+<button hover-class="btn-hover" bindtap="addBtn">添加</button>

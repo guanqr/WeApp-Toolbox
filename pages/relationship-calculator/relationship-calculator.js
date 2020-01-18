@@ -206,8 +206,9 @@ Page({
 
   wantHelp: function () {
     setTimeout(function () {
-      wx.redirectTo ({
-        url: '/pages/calculator-help/calculator-help',
+      wx.showModal({
+        title: "温馨提示",
+        content: "请先选择你的性别，使用屏幕下方按键输入亲戚和你之间的关系，屏幕上方即可显示亲戚对你的称谓。点击交换按钮可以查看你对亲戚的称谓。",
       })
     }, 50)
   },

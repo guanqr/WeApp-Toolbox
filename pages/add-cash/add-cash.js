@@ -1,11 +1,42 @@
-// pages/calculator-help/calculator-help.js
+// pages/add-cash/add-cash.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    items: [
+      { name: 'income', value: '收入', checked: 'true' },
+      { name: 'pay', value: '支出' },
+    ],
+  },
+  titleInput: function (e) {
+    let title = '生活费';
+    this.setData({
+      title: e.detail.value
+    })
+    console.log('收支名称：', this.data.title)
+  },
+  radioChange: function (e) {
+    let incomeOrPay = 'income';
+    this.setData({
+      incomeOrPay: e.detail.value
+    })
+    console.log('收支类型：', this.data.incomeOrPay)
+  },
+  moneyInput: function (e) {
+    let money = 0;
+    this.setData({
+      money: e.detail.value
+    })
+    console.log('收支金额：', this.data.money)
+  },
+  bindDateChange: function (e) {
+    let date = 0;
+    this.setData({
+      date: e.detail.value
+    })
+    console.log('日期：', this.data.date)
   },
 
   /**

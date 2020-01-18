@@ -23,15 +23,6 @@ page{
   position: fixed;
   bottom: 0;
 }
-.section {
-  background-color: #333333;
-  font-size: 30rpx;
-  width: 712.5rpx;
-  height: 22vh;
-  color: #bbbbbb;
-  padding-left: 37.5rpx;
-}
-
 .head-view {
   height: 84rpx;
   background-color: #f7f7f7;
@@ -101,8 +92,7 @@ page{
     text-align: center;
     line-height: 15vh;
     display: inline-block;
-    font-size: 40rpx;
-    
+    font-size: 40rpx; 
 }
 
 .delate-icon {

@@ -1,0 +1,62 @@
+<!--pages/cashbook/cashbook.wxml-->
+<view class="body">
+  <view class="cashbook">
+    <view class="title">压岁钱</view>
+    <view class="details">
+      <view class="money">2000</view>
+      <view class="date">2020.1.5</view>
+    </view>
+  </view>
+  <view class="cashbook">
+    <view class="title">压岁钱</view>
+    <view class="details">
+      <view class="money">2000</view>
+      <view class="date">2020.1.5</view>
+    </view>
+  </view>
+  <view class="cashbook">
+    <view class="title">压岁钱</view>
+    <view class="details">
+      <view class="money">2000</view>
+      <view class="date">2020.1.5</view>
+    </view>
+  </view>
+  <view class="cashbook">
+    <view class="title">压岁钱</view>
+    <view class="details">
+      <view class="money">2000</view>
+      <view class="date">2020.1.5</view>
+    </view>
+  </view>
+  <view class="cashbook">
+    <view class="title">压岁钱</view>
+    <view class="details">
+      <view class="money">2000</view>
+      <view class="date">2020.1.5</view>
+    </view>
+  </view>
+  <view class="cashbook">
+    <view class="title">压岁钱</view>
+    <view class="details">
+      <view class="money">2000</view>
+      <view class="date">2020.1.5</view>
+    </view>
+  </view>
+  <view class="cashbook">
+    <view class="title">压岁钱</view>
+    <view class="details">
+      <view class="money">2000</view>
+      <view class="date">2020.1.5</view>
+    </view>
+  </view>
+  <view class="cashbook">
+    <view class="title">压岁钱</view>
+    <view class="details">
+      <view class="money">2000</view>
+      <view class="date">2020.1.5</view>
+    </view>
+  </view>
+</view>
+<view class="add">
+  <image class="add-icon" bindtap="addNewCash" src="/images/add.png"></image>
+</view>

@@ -1,14 +1,13 @@
 {
   "pages": [
+    "pages/cashbook/cashbook",
     "pages/toolbox/toolbox",
-    "pages/home/home",
     "pages/relationship-calculator/relationship-calculator",
     "pages/bmi-calculator/bmi-calculator",
+    "pages/add-cash/add-cash",
+    "pages/home/home",
     "pages/setting/setting",
-    "pages/logs/logs",
-    "pages/calculator/calculator",
-    "pages/calculator-history/calculator-history",
-    "pages/calculator-help/calculator-help"
+    "pages/logs/logs"
   ],
   "window": {
     "backgroundTextStyle": "light",
