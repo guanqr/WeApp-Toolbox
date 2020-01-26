@@ -2,7 +2,7 @@ var json = [
   {
     "id": 1,
     "name": "亲戚计算器",
-    "logo": "/images/relationship.png",
+    "logo": "/images/calculat.png",
     "url": "/pages/relationship-calculator/relationship-calculator"
   },
   {

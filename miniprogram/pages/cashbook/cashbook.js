@@ -7,7 +7,8 @@ Page({
   data: {
     cashbook: [],
     startX: 0, //开始坐标
-    startY: 0
+    startY: 0,
+    countereId: null
   },
 
   
@@ -32,7 +33,7 @@ Page({
     const db = wx.cloud.database()
     db.collection('cashbook').get({
       success: res => {
-        console.log(res.data[1]._id)
+        //console.log(res.data)
         this.setData({
           cashbook: res.data,
         })

@@ -47,16 +47,36 @@ App({
   },
   globalData: {
     userInfo: null,
-    /*cashList: {}*/
+    cashList: {}
   },
 
-  /*getCashLost: function (){
+  /*getCashList: function (){
     const db = wx.cloud.database()
     db.collection('cashbook').field ({
-      title: true,
-      date: true,
-      incomeOrPay: true,
-      money: true,
+      sid: true,
+      _id: true
+    }).get ({
+      success: res => {
+        let counterIds = new Array(res.data.length);*/
+        /*res.data.forEach(function (item, index) {
+          for (var i = 0; i < res.data.length; i++){
+            counterIds[i] = item._id
+          }
+        })*/
+        /*for (var i = 0; i < res.data.length; i++) {
+          counterIds[i] = res.data[i]._id
+        }
+        console.log(counterIds)
+        this.globalData.cashList  = {
+          counterIds: counterIds
+        }
+      },
+      fail: err => {
+        wx.showToast ({
+          icon: 'none',
+          title: '查询记录失败'
+        })
+      }
     })
   }*/
 })

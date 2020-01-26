@@ -1,8 +1,8 @@
 {
   "pages": [
-    
-    "pages/cashbook/cashbook",
     "pages/toolbox/toolbox",
+    "pages/cashbook/cashbook",
+    
     "pages/relationship-calculator/relationship-calculator",
     "pages/bmi-calculator/bmi-calculator",
     "pages/add-cash/add-cash",
@@ -16,31 +16,7 @@
     "navigationBarTitleText": "独彷徨",
     "navigationBarTextStyle": "black"
   },
-  "tabBar": {
-    "position": "bottom",
-    "color": "#515151",
-    "selectedColor": "#7DB9DE",
-    "list": [
-      {
-        "pagePath": "pages/toolbox/toolbox",
-        "text": "首页",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home-selected.png"
-      },
-      {
-        "pagePath": "pages/home/home",
-        "text": "计算",
-        "iconPath": "images/calculator.png",
-        "selectedIconPath": "images/calculator-selected.png"
-      },
-      {
-        "pagePath": "pages/setting/setting",
-        "text": "设置",
-        "iconPath": "images/setting.png",
-        "selectedIconPath": "images/setting-selected.png"
-      }
-    ]
-  },
+  
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
