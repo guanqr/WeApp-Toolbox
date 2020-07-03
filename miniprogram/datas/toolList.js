@@ -16,6 +16,12 @@ var json = [
     "name": "家庭记账本",
     "logo": "/images/relationship.png",
     "url": "/pages/cashbook/cashbook"
+  },
+  {
+    "id": 4,
+    "name": "体温统计单",
+    "logo": "/images/temperature.png",
+    "url": "/pages/temperature-list/temperature-list"
   }
 ]
 

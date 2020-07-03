@@ -1,6 +1,5 @@
 // pages/bmi-calculator/bmi-calculator.js
 
-
 Page({
   STANDARD: 22,
   rules: [

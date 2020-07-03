@@ -33,7 +33,7 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.0",
+	"libVersion": "2.11.3",
 	"appid": "wx9f0b65d9e2e8207c",
 	"projectname": "toolbox",
 	"debugOptions": {

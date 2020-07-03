@@ -2,7 +2,7 @@
   "pages": [
     "pages/toolbox/toolbox",
     "pages/cashbook/cashbook",
-    
+    "pages/temperature-list/temperature-list",
     "pages/relationship-calculator/relationship-calculator",
     "pages/bmi-calculator/bmi-calculator",
     "pages/add-cash/add-cash",
