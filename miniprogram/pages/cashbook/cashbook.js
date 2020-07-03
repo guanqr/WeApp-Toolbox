@@ -33,7 +33,7 @@ Page({
     const db = wx.cloud.database()
     db.collection('cashbook').get({
       success: res => {
-        //console.log(res.data)
+        console.log(res.data)
         this.setData({
           cashbook: res.data,
         })
@@ -140,5 +140,9 @@ Page({
     this.setData({
       cashbook: this.data.cashbook
     })
+    var uid = e.target.id
+    console.log(uid)
+    const db = wx.cloud.database()
+    db.collection('cashbook').doc(uid).remove()
   },
 })

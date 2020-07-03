@@ -4,9 +4,9 @@
 
 <view class="title">收支类型</view>
 <radio-group class="category" bindchange="radioChange">
-    <label class="radio" wx:for="{{items}}" wx:key="index">
-        <radio value="{{item.name}}" checked="{{item.checked}}" color="#7DB9DE"/>{{item.value}}
-    </label>
+  <label class="radio" wx:for="{{items}}" wx:key="index">
+    <radio value="{{item.name}}" checked="{{item.checked}}" color="#7DB9DE"/>{{item.value}}
+  </label>
 </radio-group>
 
 <view class="title">收支金额（元）</view>
