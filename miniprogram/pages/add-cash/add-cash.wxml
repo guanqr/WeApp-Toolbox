@@ -1,6 +1,8 @@
 <!--pages/add-cash/add-cash.wxml-->
 <view class="title">收支名称</view>
-<input class="title-input" placeholder="" bindinput="titleInput" />
+<view class="text-space">
+  <input class="title-input" placeholder="" bindinput="titleInput" />
+</view>
 
 <view class="title">收支类型</view>
 <radio-group class="category" bindchange="radioChange">
@@ -10,11 +12,15 @@
 </radio-group>
 
 <view class="title">收支金额（元）</view>
-<input class="title-input" placeholder="" bindinput="moneyInput" />
+<view class="text-space">
+  <input class="title-input" placeholder="" bindinput="moneyInput" />
+</view>
 
 <view class="title">选择日期</view>
-<picker mode="date" value="{{date}}" start="2019-01-01" end="2030-12-31" bindchange="bindDateChange">
-  <view class="picker">{{date}}</view>
-</picker>
+<view class="text-space">
+  <picker mode="date" value="{{date}}" start="2019-01-01" end="2030-12-31" bindchange="bindDateChange">
+    <view class="picker">{{date}}</view>
+  </picker>
+</view>
 
 <button hover-class="btn-hover" bindtap="addBtn">添加</button>

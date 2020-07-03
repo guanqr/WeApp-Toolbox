@@ -7,9 +7,15 @@ page {
   padding: 32rpx 0;
   font-size: 32rpx;
 }
-.title-input {
+.text-space {
   background-color: #ffffff;
   width: 675rpx;
+  height: 68rpx;
+  margin-left: 37.5rpx;
+}
+.title-input {
+  background-color: #ffffff;
+  width: 600rpx;
   height: 68rpx;
   margin-left: 37.5rpx;
   font-size: 32rpx;
@@ -22,7 +28,7 @@ page {
 }
 .picker {
   background-color: #ffffff;
-  width: 675rpx;
+  width: 600rpx;
   height: 68rpx;
   margin-left: 37.5rpx;
   font-size: 32rpx;
