@@ -1,83 +1,89 @@
 // pages/temperature-list/temperature-list.js
-//import * as echarts from '../../ec-canvas/echarts';
+//import * as echarts from '../../ec-canvas/echarts'; 调用echart绘制图像
 var echarts = require("../../ec-canvas/echarts.js");
 
-const app = getApp();
+var name = [];
+var date = [];
+var temperature = [];
+var Chart = null;
+
+/*const app = getApp();
+
+var option = {
+  title: {
+    text: '近七日温度统计（℃）',
+    left: 'center'
+  },
+  color: ["#37A2DA"],
+  grid: {
+    containLabel: true
+  },
+  tooltip: {
+    show: true,
+    trigger: 'axis'
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+    // show: false
+  },
+  yAxis: {
+    x: 'center',
+    min: 36,
+    max: 37,
+    type: 'value',
+    splitLine: {
+      lineStyle: {
+        type: 'dashed'
+      }
+    }
+    // show: false
+  },
+  series: [{
+    name: '张三',
+    type: 'line',
+    smooth: true,
+    data: [36.1, 36.5, 36.3, 36.7, 36.4, 36.5, 36.2]
+  }]
+};
 
 function initChart(canvas, width, height, dpr) {
+
   const chart = echarts.init(canvas, null, {
     width: width,
     height: height,
     devicePixelRatio: dpr // new
   });
-  canvas.setChart(chart);
+  canvas.setChart(chart);*/
 
-  var option = {
-    title: {
-      text: '近七日温度统计',
-      left: 'center'
-    },
-    color: ["#37A2DA"],
-    //color: ["#37A2DA", "#67E0E3", "#9FE6B8"],
-    //legend: {
-    //  data: ['张三', '李四', '王五'],
-    //  top: 30,
-    //  left: 'center',
-    //  backgroundColor: 'white',
-    //  z: 100
-    //},
-    grid: {
-      containLabel: true
-    },
-    tooltip: {
-      show: true,
-      trigger: 'axis'
-    },
-    xAxis: {
-      type: 'category',
-      boundaryGap: false,
-      data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-      // show: false
-    },
-    yAxis: {
-      x: 'center',
-      min: 36,
-      max: 37,
-      type: 'value',
-      splitLine: {
-        lineStyle: {
-          type: 'dashed'
-        }
+  //从云端获取数据
+  /*const db = wx.cloud.database({});
+  const cont = db.collection('temp');
+  cont.get({
+    success: function(res) {
+      res.data.reverse();
+      console.log(res.data);
+      const name = [];
+      const date = [];
+      const temperature = [];
+      for(var i=0; i<3; i++) {
+        name.push(res.data[i].name);
+        date.push(res.data[i].date);
+        temperature.push(res.data[i].temperature);
       }
-      // show: false
-    },
-    series: [{
-      name: '张三',
-      type: 'line',
-      smooth: true,
-      data: [36.1, 36.5, 36.3, 36.7, 36.4, 36.5, 36.2]
-    }]
-    /*series: [{
-      name: '张三',
-      type: 'line',
-      smooth: true,
-      data: [36.1, 36.5, 36.3, 36.7, 36.4, 36.5, 36.2]
-    }, {
-      name: '李四',
-      type: 'line',
-      smooth: true,
-      data: [36.3, 36.5, 36.5, 36.2, 36.4, 36.2, 36.7]
-    }, {
-      name: '王五',
-      type: 'line',
-      smooth: true,
-      data: [36.6, 36.4, 36.7, 36.2, 36.3, 36.4, 36.6]
-    }]*/
-  };
+      option.xAxis[0].data = date;
+      option.series[0].name = name;
+      option.series[0].data = temperature;
+      console.log(temperature)
+      chart.setOption(option);
+      //return chart;
+    }
+  });*/
 
-  chart.setOption(option);
+/*  chart.setOption(option);
   return chart;
-}
+}*/
 
 Page({
 
@@ -86,8 +92,10 @@ Page({
    */
   data: {
     ec: {
-      onInit: initChart
-    }
+      //onInit: initChart
+      lazyLoad: true
+    },
+    temp: [],
   },
   seeDetail: function () {
     setTimeout(function () {
@@ -96,11 +104,136 @@ Page({
       })
     }, 50)
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.echartsComponnet = this.selectComponent('#mychart-dom-line');
+    this.getData(); //获取数据
+  },
 
+  getData: function () {
+  	/**
+  	 * 此处的操作：
+  	 * 获取数据json
+  	 */
+    /*if(k % 2){
+      dataList = [1, 2, 3, 4, 5, 6];
+    }else{
+      dataList = [7, 6, 9, 2, 5, 6];
+    }
+    k++;*/
+    //name = ["关其锐"];
+    //date = ["2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11"];
+    //temperature = ["36.6", "36.2", "36.5", "36.5", "36.5", "36.5", "36.5"];
+
+    //如果是第一次绘制
+    if (!Chart){
+      this.init_echarts(); //初始化图表
+    }else{
+      this.setOption(Chart); //更新数据
+    }
+
+    //从云端获取数据
+    const db = wx.cloud.database();
+    db.collection('temp').get({
+      success: res => {
+        name = [];
+        date = [];
+        temperature = [];
+        res.data.reverse();
+        console.log(res.data);
+        name.push(res.data[0].name);
+        for(var i=6; i>=0; i--) {
+          date.push(res.data[i].date);
+          temperature.push(res.data[i].temperature);
+        }
+        console.log(name);
+        console.log(date);
+        console.log(temperature);
+        //option.xAxis[0].data = date;
+        //option.series[0].name = name;
+        //option.series[0].data = temperature;
+
+        this.init_echarts();
+        //chart.setOption(option);
+        //return chart;
+      }
+    });
+  /*  wx.request({
+      url: url, //仅为示例，并非真实的接口地址
+      data: data,
+      method: 'POST',
+      header: { 'content-type': 'application/x-www-form-urlencoded' },
+      success: (res) => {
+        dataList = res.data;
+        this.init_echarts();//初始化图表
+      }
+    });  */
+  },
+  //初始化图表
+  init_echarts: function () {
+    this.echartsComponnet.init((canvas, width, height) => {
+      // 初始化图表
+      Chart = echarts.init(canvas, null, {
+        width: width,
+        height: height
+      });
+      // Chart.setOption(this.getOption());
+      this.setOption(Chart);
+      // 注意这里一定要返回 chart 实例，否则会影响事件处理等
+      return Chart;
+    });
+  },
+  setOption: function (Chart) {
+    Chart.clear();  // 清除
+    Chart.setOption(this.getOption());  //获取新数据
+  },
+  getOption: function () {
+    // 指定图表的配置项和数据
+    var option = {
+      title: {
+        text: '近七日温度统计（℃）',
+        left: 'center'
+      },
+      color: ["#37A2DA"],
+      grid: {
+        containLabel: true
+      },
+      tooltip: {
+        show: true,
+        trigger: 'axis'
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: date,
+        // show: false
+      },
+      yAxis: {
+        x: 'center',
+        min: 36,
+        max: 37,
+        type: 'value',
+        splitLine: {
+          lineStyle: {
+            type: 'dashed'
+          }
+        }
+        // show: false
+      },
+      series: [{
+        name: name,
+        type: 'line',
+        smooth: true,
+        data: temperature,
+      }]
+    };
+    console.log(name);
+    console.log(date);
+    console.log(temperature);
+    return option;
   },
 
   /**

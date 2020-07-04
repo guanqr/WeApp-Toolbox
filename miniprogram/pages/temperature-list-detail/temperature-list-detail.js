@@ -33,6 +33,7 @@ Page({
     db.collection('temp').get({
       success: res => {
         //console.log(res.data)
+        res.data.reverse()
         this.setData({
           temp: res.data,
         })

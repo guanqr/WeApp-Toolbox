@@ -34,6 +34,7 @@ Page({
     db.collection('cashbook').get({
       success: res => {
         //console.log(res.data)
+        res.data.reverse()
         this.setData({
           cashbook: res.data,
         })
