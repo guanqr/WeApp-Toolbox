@@ -1,6 +1,6 @@
 /* pages/temperature-list/temperature-list.wxss */
 page {
-  background: -webkit-linear-gradient(bottom,white,#cef3ff,#7DB9DE);
+  background-color: #f7f7f7;
 }
 ec-canvas {
   width: 100%;
@@ -26,4 +26,10 @@ ec-canvas {
   margin-top: -130rpx;
   margin-left: 150rpx;
   color: blueviolet;
+}
+wx-button {
+  color: #eff2f5;
+  background-color: #7DB9DE;
+  border-color: #7DB9DE;
+  margin-top: 64rpx;
 }

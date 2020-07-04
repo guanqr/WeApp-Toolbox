@@ -1,0 +1,18 @@
+<!--pages/temperature-list-detail/temperature-list-detail.wxml-->
+<view class="body">
+  <view class="temp-list {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{temp}}" wx:key= "index">
+    <view class="content">
+      <view class="title">{{item.name}}</view>
+      <view class="details">
+        <view class="temp" style="color: #00aa00;">{{item.temperature}} ℃</view>
+        <view class="location">{{item.location}}</view>
+        <view class="date">{{item.date}}</view>
+      </view>
+    </view>
+    <view class="del" catchtap="del" data-index="{{index}}" id='{{item._id}}'>删除</view>
+  </view>
+</view>
+
+<view class="add">
+  <image class="add-icon" bindtap="addNewTemperature" src="/images/add.png"></image>
+</view>

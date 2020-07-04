@@ -14,17 +14,18 @@ function initChart(canvas, width, height, dpr) {
 
   var option = {
     title: {
-      text: '温度统计',
+      text: '近七日温度统计',
       left: 'center'
     },
-    color: ["#37A2DA", "#67E0E3", "#9FE6B8"],
-    legend: {
-      data: ['张三', '李四', '王五'],
-      top: 30,
-      left: 'center',
-      //backgroundColor: 'white',
-      z: 100
-    },
+    color: ["#37A2DA"],
+    //color: ["#37A2DA", "#67E0E3", "#9FE6B8"],
+    //legend: {
+    //  data: ['张三', '李四', '王五'],
+    //  top: 30,
+    //  left: 'center',
+    //  backgroundColor: 'white',
+    //  z: 100
+    //},
     grid: {
       containLabel: true
     },
@@ -55,6 +56,12 @@ function initChart(canvas, width, height, dpr) {
       type: 'line',
       smooth: true,
       data: [36.1, 36.5, 36.3, 36.7, 36.4, 36.5, 36.2]
+    }]
+    /*series: [{
+      name: '张三',
+      type: 'line',
+      smooth: true,
+      data: [36.1, 36.5, 36.3, 36.7, 36.4, 36.5, 36.2]
     }, {
       name: '李四',
       type: 'line',
@@ -65,7 +72,7 @@ function initChart(canvas, width, height, dpr) {
       type: 'line',
       smooth: true,
       data: [36.6, 36.4, 36.7, 36.2, 36.3, 36.4, 36.6]
-    }]
+    }]*/
   };
 
   chart.setOption(option);
@@ -82,7 +89,13 @@ Page({
       onInit: initChart
     }
   },
-
+  seeDetail: function () {
+    setTimeout(function () {
+        wx.navigateTo({
+          url: '/pages/temperature-list-detail/temperature-list-detail',
+      })
+    }, 50)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

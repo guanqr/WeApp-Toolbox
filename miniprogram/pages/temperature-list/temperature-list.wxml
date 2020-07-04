@@ -2,3 +2,5 @@
 <view class="container">
   <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ec }}"></ec-canvas>
 </view>
+
+<button hover-class="btn-hover" bindtap="seeDetail">查看全部统计信息</button>

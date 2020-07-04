@@ -3,9 +3,11 @@
     "pages/toolbox/toolbox",
     "pages/cashbook/cashbook",
     "pages/temperature-list/temperature-list",
+    "pages/temperature-list-detail/temperature-list-detail",
     "pages/relationship-calculator/relationship-calculator",
     "pages/bmi-calculator/bmi-calculator",
     "pages/add-cash/add-cash",
+    "pages/add-temperature/add-temperature",
     "pages/home/home",
     "pages/setting/setting",
     "pages/logs/logs"

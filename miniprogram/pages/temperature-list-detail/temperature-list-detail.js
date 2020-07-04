@@ -1,17 +1,16 @@
-// pages/cashbook/cashbook.js
+// pages/temperature-list-detail/temperature-list-detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    cashbook: [],
+    temp: [],
     startX: 0, //开始坐标
     startY: 0,
     countereId: null
   },
 
-  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -31,11 +30,11 @@ Page({
    */
   onShow: function () {
     const db = wx.cloud.database()
-    db.collection('cashbook').get({
+    db.collection('temp').get({
       success: res => {
         //console.log(res.data)
         this.setData({
-          cashbook: res.data,
+          temp: res.data,
         })
       }
     })
@@ -76,10 +75,10 @@ Page({
 
   },
 
-  addNewCash: function () {
+  addNewTemperature: function () {
     setTimeout(function () {
       wx.navigateTo({
-        url: '/pages/add-cash/add-cash',
+        url: '/pages/add-temperature/add-temperature',
       })
     }, 50)
   },
@@ -87,14 +86,14 @@ Page({
   //手指触摸动作开始 记录起点X坐标
   touchstart: function (e) {
     //开始触摸时 重置所有删除
-    this.data.cashbook.forEach(function (v, i) {
+    this.data.temp.forEach(function (v, i) {
       if (v.isTouchMove)//只操作为true的
         v.isTouchMove = false;
     })
     this.setData({
       startX: e.changedTouches[0].clientX,
       startY: e.changedTouches[0].clientY,
-      cashbook: this.data.cashbook
+      temp: this.data.temp
     })
   },
   //滑动事件处理
@@ -107,7 +106,7 @@ Page({
     touchMoveY = e.changedTouches[0].clientY,//滑动变化坐标
     //获取滑动角度
     angle = that.angle({ X: startX, Y: startY }, { X: touchMoveX, Y: touchMoveY });
-    that.data.cashbook.forEach(function (v, i) {
+    that.data.temp.forEach(function (v, i) {
       v.isTouchMove = false
       //滑动超过30度角 return
       if (Math.abs(angle) > 30) return;
@@ -120,7 +119,7 @@ Page({
     })
     //更新数据
     that.setData({
-      cashbook: that.data.cashbook
+      temp: that.data.temp
     })
   },
   /**
@@ -136,13 +135,13 @@ Page({
   },
   //删除事件
   del: function (e) {
-    this.data.cashbook.splice(e.currentTarget.dataset.index, 1)
+    this.data.temp.splice(e.currentTarget.dataset.index, 1)
     this.setData({
-      cashbook: this.data.cashbook
+      temp: this.data.temp
     })
     var uid = e.target.id
     //console.log(uid)
     const db = wx.cloud.database()
-    db.collection('cashbook').doc(uid).remove()
+    db.collection('temp').doc(uid).remove()
   },
 })

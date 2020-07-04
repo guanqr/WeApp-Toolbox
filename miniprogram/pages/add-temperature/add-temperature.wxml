@@ -1,0 +1,24 @@
+<!--pages/add-temperature/add-temperature.wxml-->
+<view class="title">姓名</view>
+<view class="text-space">
+  <input class="title-input" placeholder="" bindinput="nameInput" />
+</view>
+
+<view class="title">温度</view>
+<view class="text-space">
+  <input class="title-input" placeholder="" bindinput="temperatureInput" />
+</view>
+
+<view class="title">地点</view>
+<view class="text-space">
+  <input class="title-input" placeholder="" bindinput="locationInput" />
+</view>
+
+<view class="title">日期</view>
+<view class="text-space">
+  <picker mode="date" value="{{date}}" start="2019-01-01" end="2030-12-31" bindchange="bindDateChange">
+    <view class="picker">{{date}}</view>
+  </picker>
+</view>
+
+<button hover-class="btn-hover" bindtap="addBtn">添加</button>
