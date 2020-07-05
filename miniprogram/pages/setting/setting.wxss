@@ -1,1 +1,37 @@
 /* pages/setting/setting.wxss */
+.head-height {
+  height: 200rpx;
+}
+
+.head {
+  display:flex;
+  width: 100%;
+  background-color: #eff2f5;
+  box-shadow: 0rpx 0rpx 8rpx 1rpx #7da0c0;
+  align-items: center;
+}
+
+.login-button {
+  opacity: 0; 
+  width: 100%;
+  position: fixed;
+}
+
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+}
+
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 30rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  font-size: 36rpx;
+}

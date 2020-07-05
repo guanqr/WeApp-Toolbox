@@ -18,7 +18,24 @@
     "navigationBarTitleText": "启真湖之水",
     "navigationBarTextStyle": "black"
   },
-  
+  "tabBar": {
+    "color": "#bab8b8",
+    "selectedColor": "#7DB9DE",
+    "list": [
+      {
+        "pagePath": "pages/toolbox/toolbox",
+        "text": "首页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home-selected.png"
+      },
+      {
+        "pagePath": "pages/setting/setting",
+        "text": "设置",
+        "iconPath": "/images/person.png",
+        "selectedIconPath": "/images/person-selected.png"
+      }
+    ]
+  },
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
