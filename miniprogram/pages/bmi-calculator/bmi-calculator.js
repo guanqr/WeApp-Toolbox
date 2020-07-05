@@ -13,14 +13,14 @@ Page({
    */
   data: {
     bmi: {
-      height: 170,
+      height: 175,
       weight: 60
     },
-    score: 20.8,
+    score: 19.6,
     height: 0,
     weight: 0,
     index: 0,
-    weightStandard: 63.6,
+    weightStandard: 67.4,
     physicalCondition: '正常',
   },
 

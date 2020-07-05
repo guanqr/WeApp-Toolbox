@@ -33,3 +33,14 @@ wx-button {
   border-color: #7DB9DE;
   margin-top: 64rpx;
 }
+.refresh {
+  position: fixed;
+  bottom: 60rpx;
+  right: 40rpx;
+}
+.refresh-icon {
+  height: 90rpx;
+  width: 90rpx;
+  border-radius: 100%;
+  box-shadow: 0rpx 0rpx 16rpx 1rpx #7da0c0;
+}

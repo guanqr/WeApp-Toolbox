@@ -19,7 +19,7 @@ var json = [
   },
   {
     "id": 4,
-    "name": "体温统计单",
+    "name": "温度统计单",
     "logo": "/images/temperature.png",
     "url": "/pages/temperature-list/temperature-list"
   }

@@ -118,12 +118,6 @@ Page({
   	 * 此处的操作：
   	 * 获取数据json
   	 */
-    /*if(k % 2){
-      dataList = [1, 2, 3, 4, 5, 6];
-    }else{
-      dataList = [7, 6, 9, 2, 5, 6];
-    }
-    k++;*/
     //name = ["关其锐"];
     //date = ["2020-07-05", "2020-07-06", "2020-07-07", "2020-07-08", "2020-07-09", "2020-07-10", "2020-07-11"];
     //temperature = ["36.6", "36.2", "36.5", "36.5", "36.5", "36.5", "36.5"];
@@ -143,22 +137,16 @@ Page({
         date = [];
         temperature = [];
         res.data.reverse();
-        console.log(res.data);
+        //console.log(res.data);
         name.push(res.data[0].name);
         for(var i=6; i>=0; i--) {
           date.push(res.data[i].date);
           temperature.push(res.data[i].temperature);
         }
-        console.log(name);
-        console.log(date);
-        console.log(temperature);
-        //option.xAxis[0].data = date;
-        //option.series[0].name = name;
-        //option.series[0].data = temperature;
-
+        //console.log(name);
+        //console.log(date);
+        //console.log(temperature);
         this.init_echarts();
-        //chart.setOption(option);
-        //return chart;
       }
     });
   /*  wx.request({
@@ -230,10 +218,14 @@ Page({
         data: temperature,
       }]
     };
-    console.log(name);
-    console.log(date);
-    console.log(temperature);
+    //console.log(name);
+    //console.log(date);
+    //console.log(temperature);
     return option;
+  },
+
+  refresh: function () {
+    this.setOption(Chart); //更新数据
   },
 
   /**

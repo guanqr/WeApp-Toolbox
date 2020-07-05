@@ -21,12 +21,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    clickTool: function () {
-      setTimeout(function () {
-          wx.navigateTo({
-            url: '/pages/relationship-calculator/relationship-calculator',
-        })
-      }, 50)
-    },
+
   }
 })

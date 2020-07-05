@@ -4,3 +4,7 @@
 </view>
 
 <button hover-class="btn-hover" bindtap="seeDetail">查看全部统计信息</button>
+
+<view class="refresh">
+  <image class="refresh-icon" bindtap="refresh" src="/images/refresh.png"></image>
+</view>
