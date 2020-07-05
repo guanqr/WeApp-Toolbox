@@ -7,84 +7,6 @@ var date = [];
 var temperature = [];
 var Chart = null;
 
-/*const app = getApp();
-
-var option = {
-  title: {
-    text: '近七日温度统计（℃）',
-    left: 'center'
-  },
-  color: ["#37A2DA"],
-  grid: {
-    containLabel: true
-  },
-  tooltip: {
-    show: true,
-    trigger: 'axis'
-  },
-  xAxis: {
-    type: 'category',
-    boundaryGap: false,
-    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
-    // show: false
-  },
-  yAxis: {
-    x: 'center',
-    min: 36,
-    max: 37,
-    type: 'value',
-    splitLine: {
-      lineStyle: {
-        type: 'dashed'
-      }
-    }
-    // show: false
-  },
-  series: [{
-    name: '张三',
-    type: 'line',
-    smooth: true,
-    data: [36.1, 36.5, 36.3, 36.7, 36.4, 36.5, 36.2]
-  }]
-};
-
-function initChart(canvas, width, height, dpr) {
-
-  const chart = echarts.init(canvas, null, {
-    width: width,
-    height: height,
-    devicePixelRatio: dpr // new
-  });
-  canvas.setChart(chart);*/
-
-  //从云端获取数据
-  /*const db = wx.cloud.database({});
-  const cont = db.collection('temp');
-  cont.get({
-    success: function(res) {
-      res.data.reverse();
-      console.log(res.data);
-      const name = [];
-      const date = [];
-      const temperature = [];
-      for(var i=0; i<3; i++) {
-        name.push(res.data[i].name);
-        date.push(res.data[i].date);
-        temperature.push(res.data[i].temperature);
-      }
-      option.xAxis[0].data = date;
-      option.series[0].name = name;
-      option.series[0].data = temperature;
-      console.log(temperature)
-      chart.setOption(option);
-      //return chart;
-    }
-  });*/
-
-/*  chart.setOption(option);
-  return chart;
-}*/
-
 Page({
 
   /**
@@ -137,11 +59,17 @@ Page({
         date = [];
         temperature = [];
         res.data.reverse();
-        //console.log(res.data);
         name.push(res.data[0].name);
-        for(var i=6; i>=0; i--) {
-          date.push(res.data[i].date);
-          temperature.push(res.data[i].temperature);
+        if (res.data.length < 7) {
+          for(var i=res.data.length-1; i>=0; i--) {
+            date.push(res.data[i].date);
+            temperature.push(res.data[i].temperature);
+          }
+        } else {
+          for(var i=6; i>=0; i--) {
+            date.push(res.data[i].date);
+            temperature.push(res.data[i].temperature);
+          }
         }
         //console.log(name);
         //console.log(date);
@@ -223,9 +151,31 @@ Page({
     //console.log(temperature);
     return option;
   },
-
+  
+  // 刷新数据
   refresh: function () {
-    this.setOption(Chart); //更新数据
+    const db = wx.cloud.database();
+    db.collection('temp').get({
+      success: res => {
+        name = [];
+        date = [];
+        temperature = [];
+        res.data.reverse();
+        name.push(res.data[0].name);
+        if (res.data.length < 7) {
+          for(var i=res.data.length-1; i>=0; i--) {
+            date.push(res.data[i].date);
+            temperature.push(res.data[i].temperature);
+          }
+        } else {
+          for(var i=6; i>=0; i--) {
+            date.push(res.data[i].date);
+            temperature.push(res.data[i].temperature);
+          }
+        }
+        this.init_echarts();
+      }
+    });
   },
 
   /**
