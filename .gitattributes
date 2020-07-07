@@ -1,3 +1,2 @@
 *.wxml linguist-language=HTML
 *.wxss linguist-language=CSS
-*.py linguist-language=Python
