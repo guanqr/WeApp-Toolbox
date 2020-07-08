@@ -1,0 +1,16 @@
+<!--pages/weather/weather.wxml-->
+<view class="title">选择城市：</view>
+
+<view class="text-space">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">{{array[index]}}</view>
+  </picker>
+</view>
+
+<button hover-class="btn-hover" bindtap="getWeather">查询</button>
+
+<view class="weather"></view>
+<view class="weather">城市：{{cityName}}</view>
+<view class="weather">温度：{{cityTemp}}°C</view>
+<view class="weather">天气：{{cityWea}}</view>
+<view class="weather">最后更新时间：{{updateTime}}</view>

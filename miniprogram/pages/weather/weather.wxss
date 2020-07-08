@@ -1,0 +1,35 @@
+/* pages/weather/weather.wxss */
+page {
+  background: -webkit-linear-gradient(bottom,white,#cef3ff,#7DB9DE);
+}
+.title {
+  margin-left: 37.5rpx;
+  padding: 32rpx 0;
+  font-size: 32rpx;
+}
+.text-space {
+  background-color: #ffffff;
+  width: 675rpx;
+  height: 68rpx;
+  margin-left: 37.5rpx;
+}
+.picker {
+  background-color: #ffffff;
+  width: 600rpx;
+  height: 68rpx;
+  margin-left: 37.5rpx;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+}
+.weather {
+  margin-left: 37.5rpx;
+  padding: 32rpx 0;
+  font-size: 32rpx;
+}
+wx-button {
+  color: #eff2f5;
+  background-color: #7DB9DE;
+  border-color: #7DB9DE;
+  margin-top: 64rpx;
+}
