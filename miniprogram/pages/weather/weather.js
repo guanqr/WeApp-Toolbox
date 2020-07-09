@@ -22,17 +22,6 @@ Page({
     })
     this.data.city = this.data.array1[e.detail.value]
     this.setData(this.data)
-    /*if (e.detail.value == 0){
-      this.data.city = 'beijing'
-    }
-    if (e.detail.value == 1){
-      this.data.city = 'shanghai'
-    }
-    if (e.detail.value == 2){
-      this.data.city = 'hangzhou'
-    }*/
-    //console.log('设定：', this.data.city)
-    //this.setData(this.data)
   },
   
   getWeather: function() {
