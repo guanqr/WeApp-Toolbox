@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    array: ['北京', '上海', '杭州'],
+    array: ['北京', '天津','上海', '重庆', '石家庄', '太原', '沈阳', '长春', '哈尔滨', '南京', '杭州', '合肥', '福州', '南昌', '济南', '郑州', '广州', '长沙', '武汉', '海口', '成都', '贵阳', '昆明', '西安', '兰州', '西宁', '呼和浩特', '南宁', '拉萨', '银川', '乌鲁木齐', '香港', '澳门'],
+    array1: ['beijing', 'tianjin', 'shanghai', 'chongqing', 'shijiazhuang', 'taiyuan', 'shenyang', 'changchun', 'haerbin', 'nanjing', 'hangzhou', 'hefei', 'fuzhou', 'nanchang', 'jinan', 'zhengzhou', 'guangzhou', 'changsha', 'wuhan', 'haikou', 'chengdu', 'guiyang', 'kunming', 'xian', 'lanzhou', 'xining', 'huhehaote', 'nanning', 'lasa', 'yinchuan', 'wulumuqi', 'xianggang', 'aomen'],
     city: '',
     cityName: '',
     cityTemp: '',
@@ -19,9 +20,9 @@ Page({
     this.setData({
       index: e.detail.value,
     })
-    this.data.city = this.data.array[e.detail.value]
+    this.data.city = this.data.array1[e.detail.value]
     this.setData(this.data)
-    if (e.detail.value == 0){
+    /*if (e.detail.value == 0){
       this.data.city = 'beijing'
     }
     if (e.detail.value == 1){
@@ -29,9 +30,9 @@ Page({
     }
     if (e.detail.value == 2){
       this.data.city = 'hangzhou'
-    }
+    }*/
     //console.log('设定：', this.data.city)
-    this.setData(this.data)
+    //this.setData(this.data)
   },
   
   getWeather: function() {
@@ -54,7 +55,7 @@ Page({
           'Content-Type': 'json'
         },
         success: res => {
-          console.log(res.data.results[0])
+          //console.log(res.data.results[0])
           this.data.cityName = res.data.results[0].location.name
           this.data.cityTemp = res.data.results[0].now.temperature
           this.data.cityWea = res.data.results[0].now.text
