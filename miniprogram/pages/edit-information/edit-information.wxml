@@ -1,0 +1,13 @@
+<!--pages/edit-information/edit-information.wxml-->
+<!--pages/add-temperature/add-temperature.wxml-->
+<view class="title">姓名</view>
+<view class="text-space">
+  <input class="title-input" placeholder="" bindinput="nameInput" />
+</view>
+
+<view class="title">地点</view>
+<view class="text-space">
+  <input class="title-input" placeholder="" bindinput="locationInput" />
+</view>
+
+<button hover-class="btn-hover" bindtap="addBtn">编辑完成</button>

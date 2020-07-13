@@ -11,6 +11,16 @@
     <view class="userinfo">
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <view class="edit" bindtap="clickButton">编辑信息</view>
     </view>
   </block>
 </view>
+
+<view class="user-title">姓名：{{userName}}</view>
+
+<view class="user-title">地点：{{userPos}}</view>
+
+<view class="about-title">关于</view>
+<view class="about">启真湖之水是一款健康管理类的生活工具箱，你可以在这里体验到一些新颖独特的生活小工具。</view>
+<view class="about">开发者：GuanQirui（GitHub：guanqr）</view>
+<view class="about">项目地址：https://github.com/guanqr/WeApp-Toolbox</view>

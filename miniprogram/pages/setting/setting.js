@@ -10,7 +10,9 @@ Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    userName: '未知',
+    userPos: '未知'
   },
 
   /**
@@ -34,6 +36,11 @@ Page({
         }
       })
     }
+    wx.getUserInfo({
+      success: res => {
+        that.setUserInfo(res.userInfo);
+      }
+    })
   },
 
   getUserInfo: function (e) {
@@ -50,6 +57,15 @@ Page({
     }
   },
 
+  clickButton: function () {
+    setTimeout(function () {
+      wx.navigateTo({
+        url: '/pages/edit-information/edit-information',
+      })
+    }, 50)
+  },
+  
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -61,7 +77,16 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    const db = wx.cloud.database();
+    db.collection('user').get({
+      success: res => {
+        res.data.reverse();
+        this.setData({
+          userName: res.data[0].name,
+          userPos: res.data[0].location
+        })
+      }
+    });
   },
 
   /**

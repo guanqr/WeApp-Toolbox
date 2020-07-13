@@ -35,3 +35,24 @@
 .userinfo-nickname {
   font-size: 36rpx;
 }
+
+.about-title {
+  text-align: center;
+  margin: 32rpx 0 16rpx;
+}
+
+.about {
+  padding: 16rpx 32rpx;
+  font-size: 28rpx;
+}
+
+.user-title {
+  margin-left: 37.5rpx;
+  padding: 48rpx 0 16rpx;
+  font-size: 32rpx;
+}
+
+.edit {
+  position: absolute;
+  right: 64rpx;
+}
