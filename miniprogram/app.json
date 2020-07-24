@@ -9,7 +9,6 @@
     "pages/weather/weather",
     "pages/add-cash/add-cash",
     "pages/add-temperature/add-temperature",
-    "pages/home/home",
     "pages/setting/setting",
     "pages/edit-information/edit-information",
     "pages/logs/logs"

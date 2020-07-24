@@ -2,5 +2,5 @@
   "usingComponents": {
     "toolCard": "../../components/toolCard/toolCard"
   },
-  "navigationBarTitleText": "生活工具箱"
+  "navigationBarTitleText": "健康管理平台"
 }

@@ -3,7 +3,7 @@ import json
 import ast
 
 openId = 'o2XBq5FtxdiSDfJRpxfVi74QhQSQ'
-tempName = ''
+tempName = 'GuanQirui'
 tempTemp = '36.5'
 tempLct = '杭州'
 tempDate = '2020-07-12'
@@ -36,11 +36,14 @@ def databaseQuery(access_token):
     }
     
     response = requests.post(url, data=json.dumps(data))
-    user = response.json()['data'][0]
+    length = len(response.json()['data'])
+    user = response.json()['data'][length - 1]
     user_dict = ast.literal_eval(user)
-    result = user_dict.get('_openid')
+    openId = user_dict.get('_openid')
+    location = user_dict.get('location')
     
-    print(result)
+    print(openId)
+    print(location)
 
 def databaseAdd(access_token):
     """"
